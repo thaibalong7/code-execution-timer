@@ -1,0 +1,17 @@
+.DS_Store
+.git
+.gitignore
+.npmignore
+.npmrc
+.npm-debug.log
+.editorconfig
+.eslintrc.json
+jest.config.js
+tsconfig.json
+
+.vscode/*
+coverage/*
+test/*
+src/*
+dist/dev.d.ts
+dist/dev.js

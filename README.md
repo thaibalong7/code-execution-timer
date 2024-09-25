@@ -64,6 +64,46 @@ Logged Results: [
 ]
 ```
 
+### Extending `CodeExecutionTimer` for Custom Logging
+
+You can customize to serve your own logging strategy.
+Here’s an example of a custom logging class:
+
+```javascript
+import CodeExecutionTimer from './CodeExecutionTimer';
+
+class CustomExecutionTimer extends CodeExecutionTimer {
+  constructor(label) {
+    super(label);
+  }
+
+  /**
+   * Override the printEntries method to customize the logging output.
+   * This example formats the log entries as JSON and outputs to the console.
+   * @param logEntries
+   */
+  printEntries(logEntries) {
+    console.log(`[Custom Log] ${this.label} - JSON Output:`);
+    logEntries.forEach(({ description, duration }) => {
+      console.log(JSON.stringify({ description, duration }, null, 2));
+    });
+  }
+}
+
+// Example usage of the CustomExecutionTimer
+const customTimer = new CustomExecutionTimer('Custom Task');
+
+// Log some operations
+customTimer.log('Step 1');
+setTimeout(() => {
+  customTimer.log('Step 2');
+  
+  setTimeout(() => {
+    customTimer.complete(true); // This will use the custom printEntries method
+  }, 200);
+}, 100);
+```
+
 ## API
 
 ### Class: `CodeExecutionTimer`

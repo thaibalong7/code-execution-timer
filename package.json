@@ -1,6 +1,6 @@
 {
   "name": "code-execution-timer",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Javascript utility for tracking and logging execution times for code sections. It allows for multiple log entries and provides options to display or return them for further analysis.",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",

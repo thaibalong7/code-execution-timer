@@ -1,6 +1,6 @@
 {
   "name": "code-execution-timer",
-  "version": "1.0.3",
+  "version": "2.0.0",
   "description": "Javascript utility for tracking and logging execution times for code sections. It allows for multiple log entries and provides options to display or return them for further analysis.",
   "main": "./dist/cjs/index.js",
   "module": "./dist/esm/index.mjs",
@@ -8,7 +8,8 @@
   "exports": {
     ".": {
       "require": "./dist/cjs/index.js",
-      "import": "./dist/esm/index.mjs"
+      "import": "./dist/esm/index.mjs",
+      "types": "./dist/types/index.d.ts"
     }
   },
   "files": [

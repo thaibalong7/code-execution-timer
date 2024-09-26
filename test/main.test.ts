@@ -1,5 +1,5 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import CodeExecutionTimer from '../src/index'; // Adjust the import path as needed
+import { CodeExecutionTimer } from '../src/index'; // Adjust the import path as needed
 
 describe('CodeExecutionTimer', () => {
   let timer: CodeExecutionTimer;
@@ -65,7 +65,7 @@ describe('CodeExecutionTimer', () => {
   });
 
   it('should print logs to the console when complete is called with printLog = true', (done) => {
-    const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => {}); // Mock console.log
+    const consoleSpy = jest.spyOn(console, 'log').mockImplementation(() => { }); // Mock console.log
 
     setTimeout(() => {
       timer.log('First log entry');

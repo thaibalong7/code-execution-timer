@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.CodeExecutionTimer = void 0;
 /**
  * This class is designed for tracking and logging execution times for code sections.
  * It allows for multiple log entries and provides options to display or return them for further analysis.
@@ -66,4 +67,5 @@ class CodeExecutionTimer {
         console.log(...logOutput);
     }
 }
+exports.CodeExecutionTimer = CodeExecutionTimer;
 exports.default = CodeExecutionTimer;

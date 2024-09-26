@@ -30,7 +30,7 @@ yarn add code-execution-timer
 ## Usage
 
 ```javascript
-import CodeExecutionTimer from 'code-execution-timer';
+import { CodeExecutionTimer } from 'code-execution-timer';
 
 // Initialize the timer
 const timer = new CodeExecutionTimer('My Task Timer');
@@ -70,7 +70,7 @@ You can customize to serve your own logging strategy.
 Here’s an example of a custom logging class:
 
 ```javascript
-import CodeExecutionTimer from './CodeExecutionTimer';
+import { CodeExecutionTimer } from 'code-execution-timer';
 
 class CustomExecutionTimer extends CodeExecutionTimer {
   constructor(label) {

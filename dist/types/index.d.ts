@@ -12,7 +12,7 @@ export type LogEntry = {
  * This class is designed for tracking and logging execution times for code sections.
  * It allows for multiple log entries and provides options to display or return them for further analysis.
  */
-export default class CodeExecutionTimer {
+export declare class CodeExecutionTimer {
     private label;
     private entries;
     private initialTimestamp;
@@ -45,3 +45,4 @@ export default class CodeExecutionTimer {
      */
     printEntries(logEntries: LogEntry[]): void;
 }
+export default CodeExecutionTimer;

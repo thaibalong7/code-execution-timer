@@ -1,4 +1,4 @@
-import CodeExecutionTimer, { LogEntry } from './index';
+import { CodeExecutionTimer, LogEntry } from './index';
 
 class CodeExecutionTimerEx extends CodeExecutionTimer {
   printEntries(logQueue: LogEntry[]) {

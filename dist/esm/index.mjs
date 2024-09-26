@@ -2,7 +2,7 @@
  * This class is designed for tracking and logging execution times for code sections.
  * It allows for multiple log entries and provides options to display or return them for further analysis.
  */
-export default class CodeExecutionTimer {
+export class CodeExecutionTimer {
     label;
     entries;
     initialTimestamp;
@@ -68,3 +68,4 @@ export default class CodeExecutionTimer {
         console.log(...logOutput);
     }
 }
+export default CodeExecutionTimer;

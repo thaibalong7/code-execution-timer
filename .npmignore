@@ -13,5 +13,4 @@ tsconfig.json
 coverage/*
 test/*
 src/*
-dist/dev.d.ts
-dist/dev.js
+scripts/*

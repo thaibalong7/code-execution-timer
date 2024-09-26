@@ -1,15 +1,31 @@
 {
   "name": "code-execution-timer",
-  "version": "1.0.2",
+  "version": "1.0.3",
   "description": "Javascript utility for tracking and logging execution times for code sections. It allows for multiple log entries and provides options to display or return them for further analysis.",
-  "main": "dist/index.js",
-  "types": "dist/index.d.ts",
+  "main": "./dist/cjs/index.js",
+  "module": "./dist/esm/index.mjs",
+  "types": "./dist/types/index.d.ts",
+  "exports": {
+    ".": {
+      "require": "./dist/cjs/index.js",
+      "import": "./dist/esm/index.mjs"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "test": "npm run lint && npm run jest",
     "lint": "eslint src/. --config .eslintrc.json --ext .ts --fix",
     "jest": "jest test/. --coverage && coveralls < coverage/lcov.info",
     "compile": "shx rm -rf dist/ && tsc",
-    "dev": "ts-node-dev src/dev.ts"
+    "dev": "ts-node-dev src/dev.ts",
+    "build:cjs": "tsc -p tsconfig.cjs.json",
+    "build:esm": "tsc -p tsconfig.esm.json && npm run rename:esm",
+    "build": "npm run build:cjs && npm run build:esm",
+    "clean": "rimraf dist",
+    "rename:esm": "/bin/zsh ./scripts/fix-mjs.sh",
+    "prepack": "npm run clean && npm run build"
   },
   "keywords": [
     "execution",
@@ -35,11 +51,12 @@
     "coveralls-next": "^4.2.1",
     "eslint": "^7.32.0",
     "jest": "^27.5.1",
+    "rimraf": "^6.0.1",
     "shx": "^0.3.4",
     "ts-jest": "^27.1.5",
     "ts-node-dev": "^2.0.0",
     "tslint": "^5.20.1",
-    "typescript": "^4.9.3"
+    "typescript": "^4.9.5"
   },
   "dependencies": {},
   "repository": {
